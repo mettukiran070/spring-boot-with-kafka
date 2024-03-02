@@ -1,13 +1,17 @@
+# https://medium.com/@jackie.trang18/kafka-for-dummies-and-with-practical-failure-experiments-4a1ac6cd78d0
 version: "3.8"
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.5.0
+    image: zookeeper:3.9.1
     container_name: zookeeper
     ports:
       - "2181:2181"
+      - "8080:8080"
     environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+      ZOO_ADMINSERVER_ENABLED: "true"
+#      ZOOKEEPER_CLIENT_PORT: 2181
+#      ZOOKEEPER_TICK_TIME: 2000
   kafka:
     image: confluentinc/cp-kafka:7.5.0
     container_name: kafka
