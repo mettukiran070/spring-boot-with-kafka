@@ -1,6 +1,6 @@
 package com.example.kafka.producer.controller;
 
-import com.example.kafka.producer.dto.User;
+import com.example.kafka.producer.dto.UserDto;
 import com.example.kafka.producer.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,8 +18,8 @@ public class UserController {
   private final UserService userService;
 
   @PostMapping("/user")
-  public ResponseEntity<String> saveUser(@RequestBody User user) {
-    String response = userService.publishuserInfo(user);
+  public ResponseEntity<String> saveUser(@RequestBody UserDto userDto) {
+    String response = userService.publishuserInfo(userDto);
     return new ResponseEntity<>(response, HttpStatus.OK);
   }
 

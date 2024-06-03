@@ -5,8 +5,14 @@ Spring Boot with kafka
 
 ```https://medium.com/@jackie.trang18/kafka-for-dummies-and-with-practical-failure-experiments-4a1ac6cd78d0```
 
+apache/kafka:<tag> docker image will support only in kraft mode it Will not works with zookeeper.
 
-**Replication Factor** : The topic is split into three partitions, evenly distributed into three brokers. Each partition has two other replicas, also distributed across all brokers, but this is from a different setting called replication factor.
+![img_2.png](img_2.png)
+
+
+**Cluster** : A group of computers or machines or servers, which serves for a common task.
+
+**Replication Factor** : Based on the Replication factor value, it will maintain those many replicas in the cluster. In this case, the topic is split into three partitions, evenly distributed into three brokers. Each partition has two other replicas, also distributed across all brokers, but this is from a different setting called replication factor.
 ![img.png](img.png)
 
 **Offset** : Each message in a topic has a unique identifier called offset.
