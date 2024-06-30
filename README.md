@@ -5,6 +5,20 @@ Spring Boot with kafka
 
 ```https://medium.com/@jackie.trang18/kafka-for-dummies-and-with-practical-failure-experiments-4a1ac6cd78d0```
 
+### Install and Running the kafka in local 
+1. [Download the kafka latest version from the Url](https://kafka.apache.org/downloads)
+2. Run the zookeeper Server by using below command
+    ```.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties```
+   if you are facing the using with amx line length edit the ```kafka-run-class.bat``` inside the windows folder as below
+   from ```rem Classpath addition for release
+   for %%i in ("%BASE_DIR%\libs\*") do (
+   call :concat "%%i"
+   )```
+   to ```rem Classpath addition for release
+   call :concat "%BASE_DIR%\libs\*;"```
+3. Run the kafka Server using the below command
+   ```.\bin\windows\kafka-server-start.bat .\config\server.properties```
+
 apache/kafka:<tag> docker image will support only in kraft mode it Will not works with zookeeper.
 
 ![img_2.png](img_2.png)
@@ -27,3 +41,8 @@ for more details read below article.
 ```https://medium.com/javarevisited/kafka-partitions-and-consumer-groups-in-6-mins-9e0e336c6c00```
 
 ![img_1.png](img_1.png)
+
+
+Maven command to export locally build jar to local maven repo
+
+mvn install:install-file -Dfile=.\kafka-models\target\kafka-models-1.0-SNAPSHOT.jar -DgroupId=com.example -DartifactId=kafka-models -Dversion=1.0-SNAPSHOT -Dpackaging=jar

@@ -1,7 +1,7 @@
 package com.example.kafka.producer.mapper;
 
+import com.example.kafka.model.User;
 import com.example.kafka.producer.dto.UserDto;
-import com.example.kafka.producer.model.User;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

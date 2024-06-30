@@ -1,4 +1,4 @@
-package com.example.kafka.consumer.model;
+package com.example.kafka.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
